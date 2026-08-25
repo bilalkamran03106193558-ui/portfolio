@@ -3,6 +3,15 @@ window.onload = function(){
     window.scrollTo(0,0);
 };
 
+// Smooth scroll without adding #section to URL
+function scrollToSection(id){
+    const section = document.getElementById(id);
+    if(section){
+        section.scrollIntoView({behavior:'smooth'});
+        history.replaceState(null,null,window.location.pathname);
+    }
+}
+
 // Reveal animation on scroll
 const revealItems = document.querySelectorAll('.card, .about-box, .service-box, .stat');
 
@@ -16,7 +25,6 @@ const observer = new IntersectionObserver((entries)=>{
 
 revealItems.forEach(item=>observer.observe(item));
 
-// Button ripple / smooth effects
 const buttons=document.querySelectorAll('button');
 buttons.forEach(btn=>{
  btn.addEventListener('mouseenter',()=>{
