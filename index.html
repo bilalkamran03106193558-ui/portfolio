@@ -14,30 +14,29 @@
       height: 100vh;
       overflow: hidden;
       z-index: -1;
-      background: #000;
+      background: #020617;
     }
-    .bg-iframe {
+
+    #bg-canvas {
       position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 100vw;
-      height: 56.25vw;
-      min-height: 100vh;
-      min-width: 177.77vh;
-      transform: translate(-50%, -50%);
-      pointer-events: none;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
     }
+
     .video-overlay {
       position: absolute;
       top: 0;
       left: 0;
       width: 100%;
       height: 100%;
-      background: rgba(0, 0, 0, 0.65);
+      background: rgba(2, 6, 23, 0.7);
       z-index: 1;
     }
     
-    /* 3-Second Intro Splash Screen */
+    /* 3-Second Animated Intro Splash Screen */
     #splash-screen {
       position: fixed;
       top: 0;
@@ -125,11 +124,12 @@
   </style>
 
   <script>
-    // Instantly checks if intro already played in this browser session
-    if (sessionStorage.getItem("introPlayed")) {
+    // Ensures the intro splash screen plays only on the initial fresh session load,
+    // and won't pop up again when navigating back from sub-pages (Shorts, Long Videos, etc.)
+    if (sessionStorage.getItem("introShown")) {
       document.write('<style>#splash-screen { display: none !important; }</style>');
     } else {
-      sessionStorage.setItem("introPlayed", "true");
+      sessionStorage.setItem("introShown", "true");
     }
   </script>
 </head>
@@ -144,13 +144,9 @@
     </div>
   </div>
 
+  <!-- Pure Coded Particle Plexus Background Animation -->
   <div class="video-background-container">
-    <iframe 
-      src="https://www.youtube.com/embed/s9xk77X4m5c?autoplay=1&mute=1&loop=1&playlist=s9xk77X4m5c&controls=0&showinfo=0&modestbranding=1&iv_load_policy=3&disablekb=1&playsinline=1" 
-      frameborder="0" 
-      allow="autoplay; encrypted-media" 
-      class="bg-iframe">
-    </iframe>
+    <canvas id="bg-canvas"></canvas>
     <div class="video-overlay"></div>
   </div>
 
@@ -219,7 +215,7 @@
         <div>✉</div>
         <h3>Gmail</h3>
       </a>
-      <a class="card contact-card" href="https://www.fiverr.com/btrexop" target="_blank">
+      <a class="card contact-card" href="url?id=25" target="_blank">
         <div>F</div>
         <h3>Fiverr</h3>
       </a>
@@ -232,8 +228,9 @@
 
   <footer>© 2026 Bilal Kamran | Video Editor</footer>
 
+  <script src="script.js"></script>
   <script>
-    // Fades out the 3-second splash screen smoothly on initial load
+    // Smoothly removes the 3-second splash screen on first load
     setTimeout(() => {
       const splash = document.getElementById("splash-screen");
       if (splash) {
@@ -242,6 +239,75 @@
         setTimeout(() => splash.remove(), 500);
       }
     }, 3000);
+
+    // Canvas Plexus Particle Background Animation script
+    const canvas = document.getElementById("bg-canvas");
+    const ctx = canvas.getContext("2d");
+
+    let particlesArray = [];
+    const numberOfParticles = 65;
+
+    function resizeCanvas() {
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+    }
+    window.addEventListener("resize", resizeCanvas);
+    resizeCanvas();
+
+    class Particle {
+      constructor() {
+        this.x = Math.random() * canvas.width;
+        this.y = Math.random() * canvas.height;
+        this.vx = (Math.random() - 0.5) * 0.8;
+        this.vy = (Math.random() - 0.5) * 0.8;
+        this.radius = Math.random() * 2 + 1;
+      }
+      update() {
+        this.x += this.vx;
+        this.y += this.vy;
+        if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
+        if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
+      }
+      draw() {
+        ctx.fillStyle = "#00e5ff";
+        ctx.beginPath();
+        ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2);
+        ctx.fill();
+      }
+    }
+
+    function initParticles() {
+      particlesArray = [];
+      for (let i = 0; i < numberOfParticles; i++) {
+        particlesArray.push(new Particle());
+      }
+    }
+    initParticles();
+
+    function animatePlexus() {
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      for (let i = 0; i < particlesArray.length; i++) {
+        particlesArray[i].update();
+        particlesArray[i].draw();
+
+        for (let j = i + 1; j < particlesArray.length; j++) {
+          const dx = particlesArray[i].x - particlesArray[j].x;
+          const dy = particlesArray[i].y - particlesArray[j].y;
+          const distance = Math.sqrt(dx * dx + dy * dy);
+
+          if (distance < 130) {
+            ctx.strokeStyle = `rgba(0, 229, 255, ${1 - distance / 130})`;
+            ctx.lineWidth = 0.6;
+            ctx.beginPath();
+            ctx.moveTo(particlesArray[i].x, particlesArray[i].y);
+            ctx.lineTo(particlesArray[j].x, particlesArray[j].y);
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(animatePlexus);
+    }
+    animatePlexus();
   </script>
 </body>
 </html>
