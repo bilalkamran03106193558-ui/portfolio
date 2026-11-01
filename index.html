@@ -37,7 +37,7 @@
       z-index: 1;
     }
     
-    /* Splash Screen / Intro with Profile Picture */
+    /* 3-Second Intro Splash Screen */
     #splash-screen {
       position: fixed;
       top: 0;
@@ -59,40 +59,40 @@
       display: flex;
       flex-direction: column;
       align-items: center;
-      animation: scaleInIntro 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+      animation: scaleInIntro 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
     }
 
     .splash-img {
-      width: 130px;
-      height: 130px;
+      width: 120px;
+      height: 120px;
       border-radius: 50%;
       object-fit: cover;
       border: 3px solid #00e5ff;
       box-shadow: 0 0 25px rgba(0, 229, 255, 0.5);
-      margin-bottom: 20px;
+      margin-bottom: 18px;
       animation: pulseGlow 2s infinite alternate;
     }
 
     #splash-screen h2 {
-      font-size: 2.8rem;
+      font-size: 2.5rem;
       color: #00e5ff;
-      margin-bottom: 12px;
+      margin-bottom: 10px;
       letter-spacing: 1px;
     }
 
     #splash-screen p {
-      max-width: 600px;
-      font-size: 1.15rem;
-      line-height: 1.6;
+      max-width: 550px;
+      font-size: 1.1rem;
+      line-height: 1.5;
       color: #d1d5db;
-      margin-bottom: 20px;
+      margin-bottom: 18px;
     }
 
     .splash-loader-bar {
-      width: 180px;
-      height: 4px;
+      width: 160px;
+      height: 3px;
       background: rgba(255, 255, 255, 0.1);
-      border-radius: 4px;
+      border-radius: 3px;
       overflow: hidden;
       position: relative;
     }
@@ -105,11 +105,11 @@
       height: 100%;
       width: 100%;
       background: #00e5ff;
-      animation: loadBar 4.2s linear forwards;
+      animation: loadBar 3s linear forwards;
     }
 
     @keyframes scaleInIntro {
-      0% { transform: scale(0.85); opacity: 0; }
+      0% { transform: scale(0.9); opacity: 0; }
       100% { transform: scale(1); opacity: 1; }
     }
 
@@ -125,21 +125,21 @@
   </style>
 
   <script>
-    // Runs immediately to check if the intro was already shown in this browser session
-    if (sessionStorage.getItem("introShown")) {
+    // Instantly checks if intro already played in this browser session
+    if (sessionStorage.getItem("introPlayed")) {
       document.write('<style>#splash-screen { display: none !important; }</style>');
     } else {
-      sessionStorage.setItem("introShown", "true");
+      sessionStorage.setItem("introPlayed", "true");
     }
   </script>
 </head>
 <body>
-  <!-- Animated Intro Splash Screen with Profile Picture -->
+  <!-- 3-Second Intro Splash Screen -->
   <div id="splash-screen">
     <div class="splash-content">
       <img src="assets/images/profile.jpg" alt="Bilal Kamran" class="splash-img">
       <h2>Bilal Kamran</h2>
-      <p>Professional video editor specializing in YouTube content, gaming montages, viral Shorts, and cinematic motion graphics.</p>
+      <p>Professional video editor specializing in YouTube content, gaming montages, and cinematic motion graphics.</p>
       <div class="splash-loader-bar"></div>
     </div>
   </div>
@@ -233,15 +233,15 @@
   <footer>© 2026 Bilal Kamran | Video Editor</footer>
 
   <script>
-    // Automatically hides the splash screen after 4.8 seconds on first entry
+    // Fades out the 3-second splash screen smoothly on initial load
     setTimeout(() => {
       const splash = document.getElementById("splash-screen");
       if (splash) {
-        splash.style.transition = "opacity 0.6s ease";
+        splash.style.transition = "opacity 0.5s ease";
         splash.style.opacity = "0";
-        setTimeout(() => splash.remove(), 600);
+        setTimeout(() => splash.remove(), 500);
       }
-    }, 4800);
+    }, 3000);
   </script>
 </body>
 </html>
