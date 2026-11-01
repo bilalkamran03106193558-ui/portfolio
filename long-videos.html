@@ -1,25 +1,62 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Long Videos | Bilal Kamran</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .video-background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: -1;
+      background: #020617;
+    }
+
+    #bg-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(2, 6, 23, 0.7);
+      z-index: 1;
+    }
+  </style>
 </head>
 <body>
+  <div class="video-background-container">
+    <div class="video-overlay"></div>
+  </div>
+
   <section>
     <h2>Long Videos</h2>
     <div class="cards video-cards">
       <a rel="noopener" target="_blank" class="card video-card" href="video.html?url=https://drive.google.com/file/d/10Lvx-ydr8IYSnRd9IsP_l7k7mJ62Xz5M/preview">
         <img class="video-thumb" src="https://drive.google.com/thumbnail?id=10Lvx-ydr8IYSnRd9IsP_l7k7mJ62Xz5M" alt="Video preview" loading="lazy">
       </a>
-      
       <a rel="noopener" target="_blank" class="card video-card" href="video.html?url=https://www.youtube.com/embed/7D4fKCPLExk?vq=hd1080">
         <img class="video-thumb" src="https://img.youtube.com/vi/7D4fKCPLExk/maxresdefault.jpg" alt="Video preview" loading="lazy">
       </a>
     </div>
-    
     <a href="index.html">
       <button>Back</button>
     </a>
   </section>
+
+  <script src="bg.js"></script>
 </body>
 </html>
