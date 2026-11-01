@@ -124,6 +124,8 @@
   </style>
 
   <script>
+    // Ensures the intro splash screen plays only on the initial fresh session load,
+    // and won't pop up again when navigating back from sub-pages (Shorts, Long Videos, etc.)
     if (sessionStorage.getItem("introShown")) {
       document.write('<style>#splash-screen { display: none !important; }</style>');
     } else {
@@ -132,6 +134,7 @@
   </script>
 </head>
 <body>
+  <!-- 3-Second Intro Splash Screen -->
   <div id="splash-screen">
     <div class="splash-content">
       <img src="assets/images/profile.jpg" alt="Bilal Kamran" class="splash-img">
@@ -141,6 +144,7 @@
     </div>
   </div>
 
+  <!-- Background Container for separate background.js script -->
   <div class="video-background-container">
     <div class="video-overlay"></div>
   </div>
@@ -224,8 +228,9 @@
   <footer>© 2026 Bilal Kamran | Video Editor</footer>
 
   <script src="script.js"></script>
-  <script src="bg.js"></script>
+  <script src="background.js"></script>
   <script>
+    // Smoothly removes the 3-second splash screen on first load
     setTimeout(() => {
       const splash = document.getElementById("splash-screen");
       if (splash) {
