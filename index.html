@@ -14,6 +14,7 @@
       height: 100vh;
       overflow: hidden;
       z-index: -1;
+      background: #000;
     }
     .bg-iframe {
       position: absolute;
@@ -35,12 +36,52 @@
       background: rgba(0, 0, 0, 0.6);
       z-index: 1;
     }
+    
+    /* Splash Screen / Initial 4-5 Second About Section Intro */
+    #splash-screen {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background: #0b0f19;
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      text-align: center;
+      padding: 20px;
+      animation: fadeOutSplash 0.8s ease 4.5s forwards;
+    }
+    #splash-screen h2 {
+      font-size: 2.5rem;
+      color: #00e5ff;
+      margin-bottom: 15px;
+    }
+    #splash-screen p {
+      max-width: 600px;
+      font-size: 1.1rem;
+      line-height: 1.6;
+      color: #ccc;
+    }
+    @keyframes fadeOutSplash {
+      0% { opacity: 1; visibility: visible; }
+      100% { opacity: 0; visibility: hidden; pointer-events: none; }
+    }
   </style>
 </head>
 <body>
+  <!-- 4-5 Second Splash Screen / Intro -->
+  <div id="splash-screen">
+    <h2>Bilal Kamran</h2>
+    <p>Professional video editor specializing in YouTube content, gaming montages, viral Shorts, and motion graphics with advanced color grading and clean pacing.</p>
+  </div>
+
   <div class="video-background-container">
     <iframe 
-      src="https://www.youtube.com/embed/Fu4GHmyvDk8?autoplay=1&mute=1&loop=1&playlist=Fu4GHmyvDk8&controls=0&showinfo=0&modestbranding=1&iv_load_policy=3&disablekb=1" 
+      src="https://www.youtube.com/embed/s9xk77X4m5c?autoplay=1&mute=1&loop=1&playlist=s9xk77X4m5c&controls=0&showinfo=0&modestbranding=1&iv_load_policy=3&disablekb=1&enablejsapi=1" 
       frameborder="0" 
       allow="autoplay; encrypted-media" 
       class="bg-iframe">
@@ -113,7 +154,7 @@
         <div>✉</div>
         <h3>Gmail</h3>
       </a>
-      <a class="card contact-card" href="url?id=19" target="_blank">
+      <a class="card contact-card" href="https://www.fiverr.com/btrexop" target="_blank">
         <div>F</div>
         <h3>Fiverr</h3>
       </a>
