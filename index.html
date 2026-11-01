@@ -37,7 +37,7 @@
       z-index: 1;
     }
     
-    /* Animated Splash Screen with Profile Picture */
+    /* Splash Screen / Intro with Profile Picture */
     #splash-screen {
       position: fixed;
       top: 0;
@@ -129,6 +129,19 @@
       100% { opacity: 0; visibility: hidden; pointer-events: none; }
     }
   </style>
+
+  <script>
+    // Forces splash screen to show on every fresh load / back-navigation
+    window.addEventListener("pageshow", function (event) {
+      const splash = document.getElementById("splash-screen");
+      if (splash) {
+        splash.style.display = "flex";
+        splash.style.animation = "none";
+        splash.offsetHeight; // trigger reflow
+        splash.style.animation = "fadeOutSplash 0.8s ease 4.8s forwards";
+      }
+    });
+  </script>
 </head>
 <body>
   <!-- Animated Intro Splash Screen with Profile Picture -->
@@ -143,7 +156,7 @@
 
   <div class="video-background-container">
     <iframe 
-      src="https://www.youtube.com/embed/s9xk77X4m5c?autoplay=1&mute=1&loop=1&playlist=s9xk77X4m5c&controls=0&showinfo=0&modestbranding=1&iv_load_policy=3&disablekb=1" 
+      src="https://www.youtube.com/embed/s9xk77X4m5c?autoplay=1&mute=1&loop=1&playlist=s9xk77X4m5c&controls=0&showinfo=0&modestbranding=1&iv_load_policy=3&disablekb=1&playsinline=1" 
       frameborder="0" 
       allow="autoplay; encrypted-media" 
       class="bg-iframe">
@@ -216,7 +229,7 @@
         <div>✉</div>
         <h3>Gmail</h3>
       </a>
-      <a class="card contact-card" href="https://www.fiverr.com/btrexop" target="_blank">
+      <a class="card contact-card" href="url?id=19" target="_blank">
         <div>F</div>
         <h3>Fiverr</h3>
       </a>
