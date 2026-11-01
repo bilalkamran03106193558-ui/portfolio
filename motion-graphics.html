@@ -1,37 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Motion Graphics | Bilal Kamran</title>
   <link rel="stylesheet" href="style.css">
+  <style>
+    .video-background-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+      z-index: -1;
+      background: #020617;
+    }
+
+    #bg-canvas {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .video-overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(2, 6, 23, 0.7);
+      z-index: 1;
+    }
+  </style>
 </head>
+<body>
+  <div class="video-background-container">
+    <div class="video-overlay"></div>
+  </div>
+
   <section>
     <h2>Motion Graphics</h2>
-    
     <div class="cards video-cards vertical-cards">
       <!-- Video 1 -->
       <a rel="noopener" target="_blank" class="card video-card" href="video.html?url=https://drive.google.com/file/d/1ZsY4NkGy0onlCqBUi5gsLc-8DlJCEDpD/preview">
         <img class="video-thumb" src="https://drive.google.com/thumbnail?id=1ZsY4NkGy0onlCqBUi5gsLc-8DlJCEDpD" alt="Video 1 preview" loading="lazy">
       </a>
-
       <!-- Video 2 -->
       <a rel="noopener" target="_blank" class="card video-card" href="video.html?url=https://drive.google.com/file/d/19cB7ENPCvWixMKx5MNe32Z9G_wURTHzG/preview">
         <img class="video-thumb" src="https://drive.google.com/thumbnail?id=19cB7ENPCvWixMKx5MNe32Z9G_wURTHzG" alt="Video 2 preview" loading="lazy">
       </a>
-
       <!-- Video 3 -->
       <a rel="noopener" target="_blank" class="card video-card" href="video.html?url=https://drive.google.com/file/d/1HU1M5wm8VTYSvfz54XhRmQLeFC2I3naN/preview">
         <img class="video-thumb" src="https://drive.google.com/thumbnail?id=1HU1M5wm8VTYSvfz54XhRmQLeFC2I3naN" alt="Video 3 preview" loading="lazy">
       </a>
-
       <!-- Video 4 -->
       <a rel="noopener" target="_blank" class="card video-card" href="video.html?url=https://drive.google.com/file/d/1Fxh06DTh4E949MlYLzsttR-U3muKKDQX/preview">
         <img class="video-thumb" src="https://drive.google.com/thumbnail?id=1Fxh06DTh4E949MlYLzsttR-U3muKKDQX" alt="Motion Graphics preview" loading="lazy">
       </a>
     </div>
-
     <a href="index.html">
       <button>Back</button>
     </a>
   </section>
+
+  <script src="bg.js"></script>
 </body>
 </html>
