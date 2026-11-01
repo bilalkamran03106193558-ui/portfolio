@@ -53,7 +53,6 @@
       z-index: 9999;
       text-align: center;
       padding: 30px;
-      animation: fadeOutSplash 0.8s ease 4.8s forwards;
     }
     
     .splash-content {
@@ -123,24 +122,15 @@
       0% { transform: translateX(-100%); }
       100% { transform: translateX(0); }
     }
-
-    @keyframes fadeOutSplash {
-      0% { opacity: 1; visibility: visible; }
-      100% { opacity: 0; visibility: hidden; pointer-events: none; }
-    }
   </style>
 
   <script>
-    // Forces splash screen to show on every fresh load / back-navigation
-    window.addEventListener("pageshow", function (event) {
-      const splash = document.getElementById("splash-screen");
-      if (splash) {
-        splash.style.display = "flex";
-        splash.style.animation = "none";
-        splash.offsetHeight; // trigger reflow
-        splash.style.animation = "fadeOutSplash 0.8s ease 4.8s forwards";
-      }
-    });
+    // Runs immediately to check if the intro was already shown in this browser session
+    if (sessionStorage.getItem("introShown")) {
+      document.write('<style>#splash-screen { display: none !important; }</style>');
+    } else {
+      sessionStorage.setItem("introShown", "true");
+    }
   </script>
 </head>
 <body>
@@ -229,7 +219,7 @@
         <div>✉</div>
         <h3>Gmail</h3>
       </a>
-      <a class="card contact-card" href="url?id=19" target="_blank">
+      <a class="card contact-card" href="https://www.fiverr.com/btrexop" target="_blank">
         <div>F</div>
         <h3>Fiverr</h3>
       </a>
@@ -241,5 +231,17 @@
   </section>
 
   <footer>© 2026 Bilal Kamran | Video Editor</footer>
+
+  <script>
+    // Automatically hides the splash screen after 4.8 seconds on first entry
+    setTimeout(() => {
+      const splash = document.getElementById("splash-screen");
+      if (splash) {
+        splash.style.transition = "opacity 0.6s ease";
+        splash.style.opacity = "0";
+        setTimeout(() => splash.remove(), 600);
+      }
+    }, 4800);
+  </script>
 </body>
 </html>
