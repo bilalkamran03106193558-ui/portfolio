@@ -1,78 +1,316 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en">
 <head>
-  <title>Shorts | Bilal Kamran</title>
-  <link rel="stylesheet" href="style.css">
-  <style>
-    .video-background-container {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100vw;
-      height: 100vh;
-      overflow: hidden;
-      z-index: -1;
-      background: #020617;
-    }
-
-    #bg-canvas {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      display: block;
-    }
-
-    .video-overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(2, 6, 23, 0.7);
-      z-index: 1;
-    }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#10110f">
+<meta name="description" content="Short-form edits built around pace, captions, and sound.">
+<title>Shorts & Reels | Bilal Kamran</title>
+<link rel="icon" href="assets/images/profile.ico">
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer>
+</script>
 </head>
 <body>
-  <div class="video-background-container">
-    <div class="video-overlay"></div>
-  </div>
-
-  <section>
-    <h2>Shorts</h2>
-    <div class="cards video-cards vertical-cards">
-      <!-- Old YouTube Short -->
-      <a rel="noopener" target="_blank" class="card video-card" href="video.html?url=https://www.youtube.com/embed/eXN0BVGsdQE?autoplay=1 & playsinline=1">
-        <img class="video-thumb" src="https://img.youtube.com/vi/eXN0BVGsdQE/maxresdefault.jpg" alt="Short preview" loading="lazy">
-      </a>
-      <!-- Old Drive Short 1 -->
-      <a rel="noopener" target="_blank" class="card video-card" href="video.html?url=https://drive.google.com/file/d/1JHNLZoSjW-ONlv2ZrHPkGDvWHL2Y3a8j/preview">
-        <img class="video-thumb" src="https://drive.google.com/thumbnail?id=1JHNLZoSjW-ONlv2ZrHPkGDvWHL2Y3a8j" alt="Short preview" loading="lazy">
-      </a>
-      <!-- Old Drive Short 2 -->
-      <a rel="noopener" target="_blank" class="card video-card" href="video.html?url=https://drive.google.com/file/d/1uw62d3xf9te-LPLRb3ETVBI5gOoq_Jgv/preview">
-        <img class="video-thumb" src="https://drive.google.com/thumbnail?id=1uw62d3xf9te-LPLRb3ETVBI5gOoq_Jgv" alt="Short preview" loading="lazy">
-      </a>
-      <!-- New Drive Video 1 -->
-      <a rel="noopener" target="_blank" class="card video-card" href="video.html?url=https://drive.google.com/file/d/1ZsY4NkGy0onlCqBUi5gsLc-8DlJCEDpD/preview">
-        <img class="video-thumb" src="https://drive.google.com/thumbnail?id=1ZsY4NkGy0onlCqBUi5gsLc-8DlJCEDpD" alt="Video 1 preview" loading="lazy">
-      </a>
-      <!-- New Drive Video 2 -->
-      <a rel="noopener" target="_blank" class="card video-card" href="video.html?url=https://drive.google.com/file/d/19cB7ENPCvWixMKx5MNe32Z9G_wURTHzG/preview">
-        <img class="video-thumb" src="https://drive.google.com/thumbnail?id=19cB7ENPCvWixMKx5MNe32Z9G_wURTHzG" alt="Video 2 preview" loading="lazy">
-      </a>
-      <!-- New Drive Video 3 -->
-      <a rel="noopener" target="_blank" class="card video-card" href="video.html?url=https://drive.google.com/file/d/1HU1M5wm8VTYSvfz54XhRmQLeFC2I3naN/preview">
-        <img class="video-thumb" src="https://lh3.googleusercontent.com/d/1HU1M5wm8VTYSvfz54XhRmQLeFC2I3naN=s400" alt="Video 3 preview" loading="lazy">
-      </a>
-    </div>
-    <a href="index.html">
-      <button>Back</button>
-    </a>
-  </section>
-
-  <script src="background.js"></script>
+<a class="skip-link" href="#main">Skip to content</a>
+<header class="site-header">
+<a class="brand" href="index.html" aria-label="Bilal Kamran home">
+<span class="brand-symbol">b<span>.</span>
+</span>
+<span>BILAL<br>KAMRAN<span class="brand-dot">®</span>
+</span>
+</a>
+<button class="menu-toggle" aria-expanded="false" aria-controls="navigation">Menu <span>
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M12 4v16M4 12h16"/>
+</svg>
+</span>
+</button>
+<nav id="navigation" aria-label="Main navigation">
+<a href="index.html#portfolio">Work</a>
+<a href="index.html#services">Services</a>
+<a href="index.html#about">About</a>
+<a class="nav-contact" href="index.html#contact">Let’s talk <span>
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M6 18 18 6M6 6h12v12"/>
+</svg>
+</span>
+</a>
+</nav>
+</header>
+<main id="main">
+<section class="collection-hero section-pad" id="top">
+<a class="text-link" href="index.html#portfolio">
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M20 12H4m7-7-7 7 7 7"/>
+</svg> All work</a>
+<div class="eyebrow">THE COLLECTION / SHORTS & REELS</div>
+<h1>Small screen. Big energy.</h1>
+<p>Short-form edits built around pace, captions, and sound.</p>
+</section>
+<section class="work section-pad collection-work">
+<div class="collection-meta">
+<h2>Shorts & Reels</h2>
+<span>06 EDITS / PRESS PLAY</span>
+</div>
+<div class="project-grid">
+<article class="project" data-category="shorts" data-categories="shorts">
+<a class="project-link" href="video.html?url=https%3A%2F%2Fwww.youtube.com%2Fembed%2FeXN0BVGsdQE%3Fautoplay%3D1%26playsinline%3D1" aria-label="Watch Shorts & Reels / 01">
+<div class="project-art art-shorts">
+<div class="art-type" aria-hidden="true">
+<span>Shorts & Reels</span>
+<strong>PLAY.</strong>
+<small>BILAL KAMRAN / SELECTED WORK</small>
+</div>
+<img src="https://img.youtube.com/vi/eXN0BVGsdQE/hqdefault.jpg" alt="Preview of Shorts & Reels / 01" loading="lazy" decoding="async">
+<span class="project-index">01</span>
+<span class="play-icon" aria-hidden="true">
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m8 5 11 7-11 7Z" fill="currentColor" stroke="none"/>
+</svg>
+</span>
+<span class="project-provider">YouTube</span>
+</div>
+<div class="project-caption">
+<div>
+<span>Shorts & Reels</span>
+<h3>Shorts & Reels / 01</h3>
+</div>
+<span class="project-arrow" aria-hidden="true">
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M6 18 18 6M6 6h12v12"/>
+</svg>
+</span>
+</div>
+</a>
+</article>
+<article class="project" data-category="shorts" data-categories="shorts">
+<a class="project-link" href="video.html?url=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1JHNLZoSjW-ONlv2ZrHPkGDvWHL2Y3a8j%2Fpreview" aria-label="Watch Shorts & Reels / 02">
+<div class="project-art art-shorts">
+<div class="art-type" aria-hidden="true">
+<span>Shorts & Reels</span>
+<strong>CUT.</strong>
+<small>BILAL KAMRAN / SELECTED WORK</small>
+</div>
+<img src="https://drive.google.com/thumbnail?id=1JHNLZoSjW-ONlv2ZrHPkGDvWHL2Y3a8j&amp;sz=w800" alt="Preview of Shorts & Reels / 02" loading="lazy" decoding="async">
+<span class="project-index">02</span>
+<span class="play-icon" aria-hidden="true">
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m8 5 11 7-11 7Z" fill="currentColor" stroke="none"/>
+</svg>
+</span>
+<span class="project-provider">Google Drive</span>
+</div>
+<div class="project-caption">
+<div>
+<span>Shorts & Reels</span>
+<h3>Shorts & Reels / 02</h3>
+</div>
+<span class="project-arrow" aria-hidden="true">
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M6 18 18 6M6 6h12v12"/>
+</svg>
+</span>
+</div>
+</a>
+</article>
+<article class="project" data-category="shorts" data-categories="shorts">
+<a class="project-link" href="video.html?url=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1uw62d3xf9te-LPLRb3ETVBI5gOoq_Jgv%2Fpreview" aria-label="Watch Shorts & Reels / 03">
+<div class="project-art art-shorts">
+<div class="art-type" aria-hidden="true">
+<span>Shorts & Reels</span>
+<strong>CREATE.</strong>
+<small>BILAL KAMRAN / SELECTED WORK</small>
+</div>
+<img src="https://drive.google.com/thumbnail?id=1uw62d3xf9te-LPLRb3ETVBI5gOoq_Jgv&amp;sz=w800" alt="Preview of Shorts & Reels / 03" loading="lazy" decoding="async">
+<span class="project-index">03</span>
+<span class="play-icon" aria-hidden="true">
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m8 5 11 7-11 7Z" fill="currentColor" stroke="none"/>
+</svg>
+</span>
+<span class="project-provider">Google Drive</span>
+</div>
+<div class="project-caption">
+<div>
+<span>Shorts & Reels</span>
+<h3>Shorts & Reels / 03</h3>
+</div>
+<span class="project-arrow" aria-hidden="true">
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M6 18 18 6M6 6h12v12"/>
+</svg>
+</span>
+</div>
+</a>
+</article>
+<article class="project" data-category="shorts" data-categories="shorts motion-graphics">
+<a class="project-link" href="video.html?url=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1ZsY4NkGy0onlCqBUi5gsLc-8DlJCEDpD%2Fpreview" aria-label="Watch Shorts & Reels / 04">
+<div class="project-art art-shorts">
+<div class="art-type" aria-hidden="true">
+<span>Shorts & Reels</span>
+<strong>MOVE.</strong>
+<small>BILAL KAMRAN / SELECTED WORK</small>
+</div>
+<img src="https://drive.google.com/thumbnail?id=1ZsY4NkGy0onlCqBUi5gsLc-8DlJCEDpD&amp;sz=w800" alt="Preview of Shorts & Reels / 04" loading="lazy" decoding="async">
+<span class="project-index">04</span>
+<span class="play-icon" aria-hidden="true">
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m8 5 11 7-11 7Z" fill="currentColor" stroke="none"/>
+</svg>
+</span>
+<span class="project-provider">Google Drive</span>
+</div>
+<div class="project-caption">
+<div>
+<span>Shorts & Reels</span>
+<h3>Shorts & Reels / 04</h3>
+</div>
+<span class="project-arrow" aria-hidden="true">
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M6 18 18 6M6 6h12v12"/>
+</svg>
+</span>
+</div>
+</a>
+</article>
+<article class="project" data-category="shorts" data-categories="shorts motion-graphics">
+<a class="project-link" href="video.html?url=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F19cB7ENPCvWixMKx5MNe32Z9G_wURTHzG%2Fpreview" aria-label="Watch Shorts & Reels / 05">
+<div class="project-art art-shorts">
+<div class="art-type" aria-hidden="true">
+<span>Shorts & Reels</span>
+<strong>PLAY.</strong>
+<small>BILAL KAMRAN / SELECTED WORK</small>
+</div>
+<img src="https://drive.google.com/thumbnail?id=19cB7ENPCvWixMKx5MNe32Z9G_wURTHzG&amp;sz=w800" alt="Preview of Shorts & Reels / 05" loading="lazy" decoding="async">
+<span class="project-index">05</span>
+<span class="play-icon" aria-hidden="true">
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m8 5 11 7-11 7Z" fill="currentColor" stroke="none"/>
+</svg>
+</span>
+<span class="project-provider">Google Drive</span>
+</div>
+<div class="project-caption">
+<div>
+<span>Shorts & Reels</span>
+<h3>Shorts & Reels / 05</h3>
+</div>
+<span class="project-arrow" aria-hidden="true">
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M6 18 18 6M6 6h12v12"/>
+</svg>
+</span>
+</div>
+</a>
+</article>
+<article class="project" data-category="shorts" data-categories="shorts motion-graphics">
+<a class="project-link" href="video.html?url=https%3A%2F%2Fdrive.google.com%2Ffile%2Fd%2F1HU1M5wm8VTYSvfz54XhRmQLeFC2I3naN%2Fpreview" aria-label="Watch Shorts & Reels / 06">
+<div class="project-art art-shorts">
+<div class="art-type" aria-hidden="true">
+<span>Shorts & Reels</span>
+<strong>CUT.</strong>
+<small>BILAL KAMRAN / SELECTED WORK</small>
+</div>
+<img src="https://drive.google.com/thumbnail?id=1HU1M5wm8VTYSvfz54XhRmQLeFC2I3naN&amp;sz=w800" alt="Preview of Shorts & Reels / 06" loading="lazy" decoding="async">
+<span class="project-index">06</span>
+<span class="play-icon" aria-hidden="true">
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="m8 5 11 7-11 7Z" fill="currentColor" stroke="none"/>
+</svg>
+</span>
+<span class="project-provider">Google Drive</span>
+</div>
+<div class="project-caption">
+<div>
+<span>Shorts & Reels</span>
+<h3>Shorts & Reels / 06</h3>
+</div>
+<span class="project-arrow" aria-hidden="true">
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M6 18 18 6M6 6h12v12"/>
+</svg>
+</span>
+</div>
+</a>
+</article>
+</div>
+<nav class="collection-nav" aria-label="Work collections">
+<a href="long-videos.html" >Long videos <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M6 18 18 6M6 6h12v12"/>
+</svg>
+</a>
+<a href="shorts.html" aria-current="page">Shorts & Reels <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M6 18 18 6M6 6h12v12"/>
+</svg>
+</a>
+<a href="raw-edit-shorts.html" >Raw vs Edit <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M6 18 18 6M6 6h12v12"/>
+</svg>
+</a>
+<a href="ai-videos.html" >AI videos <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M6 18 18 6M6 6h12v12"/>
+</svg>
+</a>
+<a href="motion-graphics.html" >Motion graphics <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M6 18 18 6M6 6h12v12"/>
+</svg>
+</a>
+</nav>
+</section>
+<section class="contact section-pad" id="contact">
+<div class="eyebrow">
+<span class="status-dot">
+</span> YOUR NEXT VIDEO STARTS HERE</div>
+<h2>Let’s make<br>
+<em>something move.</em>
+<span class="contact-arrow" aria-hidden="true">
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M6 18 18 6M6 6h12v12"/>
+</svg>
+</span>
+</h2>
+<div class="contact-bottom">
+<p>Have footage. Have an idea.<br>Let’s turn it into something worth watching.</p>
+<a class="button button-dark" href="https://www.fiverr.com/btrexop" target="_blank" rel="noopener noreferrer">Start a project on Fiverr <span>
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M6 18 18 6M6 6h12v12"/>
+</svg>
+</span>
+</a>
+</div>
+<div class="contact-links">
+<a href="mailto:bilalkamran0310@gmail.com">bilalkamran0310@gmail.com <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M6 18 18 6M6 6h12v12"/>
+</svg>
+</a>
+<button class="copy-email" type="button">Copy email <span>
+<svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<rect x="8" y="8" width="12" height="12" rx="1"/>
+<path d="M16 8V4H4v12h4"/>
+</svg>
+</span>
+</button>
+<a href="https://discord.com" target="_blank" rel="noopener noreferrer">Open Discord <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M6 18 18 6M6 6h12v12"/>
+</svg>
+</a>
+<span class="copy-status" role="status" aria-live="polite">
+</span>
+</div>
+</section>
+</main>
+<footer class="footer">
+<a class="footer-name" href="index.html">BILAL KAMRAN<span>®</span>
+</a>
+<div>
+<span>© 2026 Bilal Kamran</span>
+<span>Video editor · Creative storyteller</span>
+<a href="#top">Back to top <svg class="icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+<path d="M12 20V4m-7 7 7-7 7 7"/>
+</svg>
+</a>
+</div>
+</footer>
 </body>
 </html>
